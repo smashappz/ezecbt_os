@@ -253,6 +253,15 @@
     "@babel/helper-create-class-features-plugin" "^7.5.5"
     "@babel/helper-plugin-utils" "^7.0.0"
 
+"@babel/plugin-proposal-decorators@^7.6.0":
+  version "7.6.0"
+  resolved "https://registry.yarnpkg.com/@babel/plugin-proposal-decorators/-/plugin-proposal-decorators-7.6.0.tgz#6659d2572a17d70abd68123e89a12a43d90aa30c"
+  integrity sha512-ZSyYw9trQI50sES6YxREXKu+4b7MAg6Qx2cvyDDYjP2Hpzd3FleOUwC9cqn1+za8d0A2ZU8SHujxFao956efUg==
+  dependencies:
+    "@babel/helper-create-class-features-plugin" "^7.6.0"
+    "@babel/helper-plugin-utils" "^7.0.0"
+    "@babel/plugin-syntax-decorators" "^7.2.0"
+
 "@babel/plugin-proposal-export-default-from@^7.0.0":
   version "7.5.2"
   resolved "https://registry.yarnpkg.com/@babel/plugin-proposal-export-default-from/-/plugin-proposal-export-default-from-7.5.2.tgz#2c0ac2dcc36e3b2443fead2c3c5fc796fb1b5145"
@@ -297,6 +306,13 @@
   version "7.2.0"
   resolved "https://registry.yarnpkg.com/@babel/plugin-syntax-class-properties/-/plugin-syntax-class-properties-7.2.0.tgz#23b3b7b9bcdabd73672a9149f728cd3be6214812"
   integrity sha512-UxYaGXYQ7rrKJS/PxIKRkv3exi05oH7rokBAsmCSsCxz1sVPZ7Fu6FzKoGgUvmY+0YgSkYHgUoCh5R5bCNBQlw==
+  dependencies:
+    "@babel/helper-plugin-utils" "^7.0.0"
+
+"@babel/plugin-syntax-decorators@^7.2.0":
+  version "7.2.0"
+  resolved "https://registry.yarnpkg.com/@babel/plugin-syntax-decorators/-/plugin-syntax-decorators-7.2.0.tgz#c50b1b957dcc69e4b1127b65e1c33eef61570c1b"
+  integrity sha512-38QdqVoXdHUQfTpZo3rQwqQdWtCn5tMv4uV6r2RMfTqNBuv4ZBhz79SfaQWKTVmxHjeFv/DnXVC/+agHCklYWA==
   dependencies:
     "@babel/helper-plugin-utils" "^7.0.0"
 
@@ -866,6 +882,17 @@
     "@types/istanbul-lib-coverage" "^2.0.0"
     "@types/istanbul-reports" "^1.1.1"
     "@types/yargs" "^13.0.0"
+
+"@nozbe/watermelondb@^0.14.1":
+  version "0.14.1"
+  resolved "https://registry.yarnpkg.com/@nozbe/watermelondb/-/watermelondb-0.14.1.tgz#15184e711dc16b4f34e6d85ecef5bb84e718240b"
+  integrity sha512-4pYzgkG4yLJFqmViAVPvRAYydACS8aVVX7DyTJqdGnxDizpFwOWwR65Zqmm9LF39xehdOd4NcsK1o+WrPC9nwQ==
+  dependencies:
+    lokijs "^1.5.5"
+    rambdax "^2.13.0"
+    rxjs "^6.2.2"
+    rxjs-compat "^6.3.2"
+    sql-escape-string "^1.1.0"
 
 "@nozbe/with-observables@^1.0.5":
   version "1.0.5"
@@ -4108,6 +4135,11 @@ logkitty@^0.6.0:
     dayjs "^1.8.15"
     yargs "^12.0.5"
 
+lokijs@^1.5.5:
+  version "1.5.7"
+  resolved "https://registry.yarnpkg.com/lokijs/-/lokijs-1.5.7.tgz#3bbeb5c2dbffebd78d035bac82c7c4e6055870f0"
+  integrity sha512-2SqUV6JH4f15Z5/7LVsyadSUwHhZppxhujgy/VhVqiRYMGt5oaocb7fV/3JGjHJ6rTuEIajnpTLGRz9cJW/c3g==
+
 loose-envify@^1.0.0, loose-envify@^1.1.0, loose-envify@^1.3.1, loose-envify@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/loose-envify/-/loose-envify-1.4.0.tgz#71ee51fa7be4caec1a63839f7e682d8132d30caf"
@@ -5298,6 +5330,11 @@ qs@~6.5.2:
   resolved "https://registry.yarnpkg.com/qs/-/qs-6.5.2.tgz#cb3ae806e8740444584ef154ce8ee98d403f3e36"
   integrity sha512-N5ZAX4/LxJmF+7wN74pUD6qAh9/wnvdQcjq9TZjevvXzSUo7bfmw91saqMjzGS2xq91/odN2dW/WOl7qQHNDGA==
 
+rambdax@^2.13.0:
+  version "2.14.1"
+  resolved "https://registry.yarnpkg.com/rambdax/-/rambdax-2.14.1.tgz#9ede5eebd3bb502ff584592e376abf67e7f8e107"
+  integrity sha512-VCXGhXzUdzt0m0clxjVflRZsUB+O1+RzZWWefh7CQg6aMvDIypvSphRApXpPGqBOzJnQw2YBkVZZiInYx3GPfw==
+
 range-parser@~1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/range-parser/-/range-parser-1.2.1.tgz#3cf37023d199e1c24d1a55b84800c2f3e6468031"
@@ -5876,6 +5913,11 @@ rx-lite@*, rx-lite@^4.0.8:
   resolved "https://registry.yarnpkg.com/rx-lite/-/rx-lite-4.0.8.tgz#0b1e11af8bc44836f04a6407e92da42467b79444"
   integrity sha1-Cx4Rr4vESDbwSmQH6S2kJGe3lEQ=
 
+rxjs-compat@^6.3.2:
+  version "6.5.3"
+  resolved "https://registry.yarnpkg.com/rxjs-compat/-/rxjs-compat-6.5.3.tgz#18440949b2678bf87a78a754009676b2c49183dc"
+  integrity sha512-BIJX2yovz3TBpjJoAZyls2QYuU6ZiCaZ+U96SmxQpuSP/qDUfiXPKOVLbThBB2WZijNHkdTTJXKRwvv5Y48H7g==
+
 rxjs@^5.4.3:
   version "5.5.12"
   resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-5.5.12.tgz#6fa61b8a77c3d793dbaf270bee2f43f652d741cc"
@@ -5883,7 +5925,7 @@ rxjs@^5.4.3:
   dependencies:
     symbol-observable "1.0.1"
 
-rxjs@^6.4.0:
+rxjs@^6.2.2, rxjs@^6.4.0:
   version "6.5.3"
   resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-6.5.3.tgz#510e26317f4db91a7eb1de77d9dd9ba0a4899a3a"
   integrity sha512-wuYsAYYFdWTAnAaPoKGNhfpWwKZbJW+HgAJ+mImp+Epl7BG8oNWBCTyRM8gba9k4lk8BgWdoYm21Mo/RYhhbgA==
@@ -6198,6 +6240,11 @@ sprintf-js@~1.0.2:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/sprintf-js/-/sprintf-js-1.0.3.tgz#04e6926f662895354f3dd015203633b857297e2c"
   integrity sha1-BOaSb2YolTVPPdAVIDYzuFcpfiw=
+
+sql-escape-string@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/sql-escape-string/-/sql-escape-string-1.1.0.tgz#fe744b8514868c0eb4bfb9e4a989271d40f30eb9"
+  integrity sha1-/nRLhRSGjA60v7nkqYknHUDzDrk=
 
 sshpk@^1.7.0:
   version "1.16.1"
