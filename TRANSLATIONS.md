@@ -32,10 +32,10 @@ i18n.translations = { fr, en };
 ## Save your code and open up a new PR
 
 ```
-git checkout -b french;
-git add .;
+git checkout -b french
+git add .
 git commit -m "Add French"
-git push;
+git push
 ```
 
 Then go on github, click "New Pull Request", and then fill in your branch and master:
