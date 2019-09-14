@@ -15,7 +15,6 @@ import {
   widthPercentageToDP as wp
 } from "react-native-responsive-screen";
 import i18n from "../i18n";
-import RNAdConsent from "react-native-ad-consent";
 import { zip, unzip } from "react-native-zip-archive";
 import {
   SwitchButton,
@@ -348,11 +347,6 @@ class Config extends Component {
             : ""
         });
 
-    const consent =
-      Settings.consentStatus === RNAdConsent.PERSONALIZED
-        ? i18n.t("config.consent_yes")
-        : i18n.t("config.consent_no");
-
     return (
       <View
         style={{
@@ -475,40 +469,6 @@ class Config extends Component {
             )}
           </View>
         </View>
-        {Settings.isRequestLocationInEeaOrUnknown && (
-          <View style={{ borderColor, borderBottomWidth: 1, padding: wp(4.8) }}>
-            <View
-              style={{ alignItems: "center", flex: 1, flexDirection: "row" }}
-            >
-              <Icon
-                name="md-easel"
-                size={wp(6.7)}
-                style={{ color, paddingRight: 10 }}
-              />
-              <SwitchText theme={theme}>{consent}</SwitchText>
-            </View>
-            <View
-              style={{
-                alignItems: "center",
-                flex: 1,
-                flexDirection: "row",
-                justifyContent: "space-evenly",
-                paddingTop: wp(2.2)
-              }}
-            >
-              <TouchableNativeFeedback onPress={this.onChangeAds}>
-                <SwitchButton>
-                  &nbsp;{i18n.t("config.consentChange")}&nbsp;
-                </SwitchButton>
-              </TouchableNativeFeedback>
-              <TouchableNativeFeedback onPress={this.onChangeAds2}>
-                <SwitchButton>
-                  &nbsp;{i18n.t("config.consentProviders")}&nbsp;
-                </SwitchButton>
-              </TouchableNativeFeedback>
-            </View>
-          </View>
-        )}
         <SwitchView theme={theme}>
           <TouchableNativeFeedback
             onPress={() =>

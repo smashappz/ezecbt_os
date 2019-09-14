@@ -35,7 +35,6 @@ export const screenWidth = Dimensions.get("window").width;
 
 export const Settings = {
   adProviders: [],
-  consentStatus: RNAdConsent.UNKNOWN,
   dictation: false,
   incremental: false,
   isRequestLocationInEeaOrUnknown: false,

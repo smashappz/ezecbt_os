@@ -1,115 +1,84 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- */
+import React, { Component } from "react";
+import { AppState, Modal } from "react-native";
+import PINCode, { hasUserSetPinCode } from "@haskkor/react-native-pincode";
+import SplashScreen from "react-native-splash-screen";
+import CBTApp from "./src/Cbt";
+import { cbtRef, getData, ThemeContext, themes } from "./src/utils";
+import i18n from "./src/i18n";
 
-import React, { Fragment } from "react";
-import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
-  View,
-  Text,
-  StatusBar
-} from "react-native";
+class App extends Component {
+  constructor(props) {
+    super(props);
 
-import {
-  Header,
-  LearnMoreLinks,
-  Colors,
-  DebugInstructions,
-  ReloadInstructions
-} from "react-native/Libraries/NewAppScreen";
-
-const App = () => {
-  return (
-    <Fragment>
-      <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
-        <ScrollView
-          contentInsetAdjustmentBehavior="automatic"
-          style={styles.scrollView}
-        >
-          <Header />
-          {global.HermesInternal == null ? null : (
-            <View style={styles.engine}>
-              <Text style={styles.footer}>Engine: Hermes</Text>
-            </View>
-          )}
-          <View style={styles.body}>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Step One</Text>
-              <Text style={styles.sectionDescription}>
-                Edit <Text style={styles.highlight}>App.js</Text> to change this
-                screen and then come back to see your edits.
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>See Your Changes</Text>
-              <Text style={styles.sectionDescription}>
-                <ReloadInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Debug</Text>
-              <Text style={styles.sectionDescription}>
-                <DebugInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Learn More</Text>
-              <Text style={styles.sectionDescription}>
-                Read the docs to discover what to do next:
-              </Text>
-            </View>
-            <LearnMoreLinks />
-          </View>
-        </ScrollView>
-      </SafeAreaView>
-    </Fragment>
-  );
-};
-
-const styles = StyleSheet.create({
-  scrollView: {
-    backgroundColor: Colors.lighter
-  },
-  engine: {
-    position: "absolute",
-    right: 0
-  },
-  body: {
-    backgroundColor: Colors.white
-  },
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: "600",
-    color: Colors.black
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: "400",
-    color: Colors.dark
-  },
-  highlight: {
-    fontWeight: "700"
-  },
-  footer: {
-    color: Colors.dark,
-    fontSize: 12,
-    fontWeight: "600",
-    padding: 4,
-    paddingRight: 12,
-    textAlign: "right"
+    this.state = {
+      showPin: false,
+      theme: themes.light,
+      toggleTheme: () =>
+        this.setState(state => ({
+          theme: state.theme === themes.dark ? themes.light : themes.dark
+        }))
+    };
   }
-});
+
+  async componentDidMount() {
+    AppState.addEventListener("change", state => {
+      if (state !== "background") {
+        return;
+      }
+
+      const _this_ = this;
+
+      hasUserSetPinCode().then(showPin => {
+        if (!showPin) {
+          return;
+        }
+
+        this.setState({
+          showPin: true
+        });
+      });
+    });
+
+    getData("darkMode", darkMode => {
+      this.setState({
+        theme: darkMode === "true" ? themes.dark : themes.light
+      });
+    });
+
+    hasUserSetPinCode().then(showPin => {
+      this.setState({
+        showPin
+      });
+
+      SplashScreen.hide();
+    });
+  }
+
+  finishProcess = pinCode => {
+    this.setState({
+      showPin: false
+    });
+  };
+
+  render() {
+    const { showPin } = this.state;
+
+    return (
+      <ThemeContext.Provider value={this.state}>
+        <CBTApp ref={cbtRef} />
+        <Modal animationType="slide" transparent={false} visible={showPin}>
+          <PINCode
+            finishProcess={this.finishProcess}
+            status={"enter"}
+            subtitleError={i18n.t("pin.subtitle")}
+            touchIDDisabled={true}
+            titleAttemptFailed={i18n.t("pin.failed")}
+            titleChoose={i18n.t("pin.enter")}
+          />
+        </Modal>
+      </ThemeContext.Provider>
+    );
+  }
+}
 
 export default App;
