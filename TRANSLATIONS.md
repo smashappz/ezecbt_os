@@ -3,7 +3,7 @@
 
 ## Create a JSON file
 
-Copy the `src/Locales/en.json` file to a new locale following [the ISO-639-1](http://www.loc.gov/standards/iso639-2/php/English_list.php) code. If you have a region designator and you know it, add it as an underscore as described by @briankung.
+Copy the `src/Locales/en.json` file to a new locale following [the ISO-639-1](http://www.loc.gov/standards/iso639-2/php/English_list.php) code. 
 
 For example, if want to translate into French, do:
 
