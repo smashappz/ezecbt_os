@@ -389,7 +389,6 @@ class Diary extends Component {
       this.setState({
         post: null
       });
-      trendsRef.current.getData();
     }
   };
 

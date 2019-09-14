@@ -581,4 +581,4 @@ Config.contextType = ThemeContext;
 export default Config;
 
 // adb shell
-// run-as com.smashappz.ezecbt
+// run-as com.cbt

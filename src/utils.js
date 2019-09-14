@@ -4,6 +4,7 @@ import AsyncStorage from "@react-native-community/async-storage";
 import RNFS, { DocumentDirectoryPath } from "react-native-fs";
 import * as RNLocalize from "react-native-localize";
 import date from "date-and-time";
+import i18n from "./i18n";
 import Tts from "react-native-tts";
 import Voice from "react-native-voice";
 import { updateTrends } from "./Database/db";
@@ -216,43 +217,43 @@ export const getDBPath = () => {
 export const getDistortion = key => {
   switch (key) {
     case "allOrNothing":
-      return "all or nothing";
+      return i18n.t("diary.dist_all");
 
     case "alwaysRight":
-      return "always being right";
+      return i18n.t("diary.dist_right");
 
     case "change":
-      return "fallacy of change";
+      return i18n.t("diary.dist_change");
 
     case "disqualifying":
-      return "disqualifying the positive";
+      return i18n.t("diary.dist_disq");
 
     case "emotional":
-      return "emotional reasoning";
+      return i18n.t("diary.dist_emo");
 
     case "fairness":
-      return "fallacy of fairness";
+      return i18n.t("diary.dist_fair");
 
     case "fortune":
-      return "fortune telling";
+      return i18n.t("diary.dist_fortune");
 
     case "labeling":
-      return "labeling and mislabeling";
+      return i18n.t("diary.dist_label");
 
     case "mindReading":
-      return "mind reading";
+      return i18n.t("diary.dist_mind");
 
     case "minimization":
-      return "minimization of the positive";
+      return i18n.t("diary.dist_min");
 
     case "personalization":
-      return "personalization, blame, or attribution";
+      return i18n.t("diary.dist_person");
 
     case "selective":
-      return "selective abstraction";
+      return i18n.t("diary.dist_sel");
 
     case "should":
-      return "should statements";
+      return i18n.t("diary.dist_should");
 
     default:
       return key;

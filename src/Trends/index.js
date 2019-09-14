@@ -98,15 +98,16 @@ class Trends extends Component {
     }
 
     distortions = distortions.filter(d => d.count > 0);
+    const l = distortions.length;
 
-    if (distortions.length === 0) {
+    if (l === 0) {
       this.setState({
         loading: false
       });
       return;
     }
 
-    if (!Settings.pieChart) {
+    if (!Settings.pieChart && l > 5) {
       const count = distortions
         .slice(5)
         .map(d => d.count)
