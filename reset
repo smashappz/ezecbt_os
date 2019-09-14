@@ -1,0 +1,2 @@
+killall node
+npm start --reset-cache

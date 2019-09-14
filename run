@@ -1,0 +1,4 @@
+#killall node
+#npm start -- --reset-cache &
+react-native start &
+react-native run-android
