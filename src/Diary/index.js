@@ -550,7 +550,7 @@ class Diary extends Component {
           keyExtractor={(item, index) => item.id}
           ListEmptyComponent={
             timestamp === 0 ? (
-              <Text style={{ color, textAlign: "center" }}>
+              <Text style={{ color, paddingTop: wp(4.4), textAlign: "center" }}>
                 {i18n.t("diary.add")}
               </Text>
             ) : null

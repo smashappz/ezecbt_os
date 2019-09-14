@@ -92,7 +92,8 @@ class Trends extends Component {
 
     if (!distortions) {
       this.setState({
-        loading: false
+        loading: false,
+        pieData: []
       });
       return;
     }
@@ -102,7 +103,8 @@ class Trends extends Component {
 
     if (l === 0) {
       this.setState({
-        loading: false
+        loading: false,
+        pieData: []
       });
       return;
     }
