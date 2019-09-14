@@ -42,7 +42,7 @@ Of course!
 
 **If you're a mental health professional,** audit [the descriptions](https://github.com/smashappz/ezecbt_os/blob/master/src/Locales/en.json) of the cognitive distortions. If you have suggestions, let me know and we'll change stuff!
 
-**If you know a language other than English,** help [us translate the app!](/TRANSLATIONS.md)
+**If you know a language other than English,** [help us translate the app!](/TRANSLATIONS.md)
 
 # License
 
