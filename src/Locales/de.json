@@ -248,7 +248,7 @@
     "skip": "Überspringen"
   },
   "pin": {
-    "enter": "Gib deinen PIN-Code ein",
+    "enter": "Gib deinen PIN-Code",
     "failed": "Falscher PIN-Code",
     "subtitle": "Versuche es bitte noch einmal"
   },
