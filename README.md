@@ -13,7 +13,7 @@ app built in React Native.
 
 Some amazing folks have helped build this app that you see today.
 
-- ... for the amazing German translation 🇩🇪 
+- [Juliane Lehmann](https://github.com/strooooke) for the amazing German translation 🇩🇪 
 
 ## Running Locally
 

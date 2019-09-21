@@ -1,8 +1,7 @@
 import React from "react";
-import { Dimensions, Linking, NativeModules } from "react-native";
+import { Dimensions, Linking } from "react-native";
 import AsyncStorage from "@react-native-community/async-storage";
 import RNFS, { DocumentDirectoryPath } from "react-native-fs";
-import * as RNLocalize from "react-native-localize";
 import date from "date-and-time";
 import i18n from "./i18n";
 import Tts from "react-native-tts";
@@ -30,16 +29,12 @@ export const restructureRef = React.createRef();
 
 export const trendsRef = React.createRef();
 
-export const locale = NativeModules.I18nManager.localeIdentifier;
-
 export const screenWidth = Dimensions.get("window").width;
 
 export const Settings = {
   adProviders: [],
   dictation: false,
   incremental: false,
-  isRequestLocationInEeaOrUnknown: false,
-  locale: "en",
   pieChart: false,
   viewPortHeight: 592, // Moto G4
   viewPortWidth: 360 // Moto G4
@@ -271,10 +266,6 @@ export const getDistortion = key => {
         }
       })
       .catch(err => {});
-  } catch (e) {}
-
-  try {
-    Settings.locale = RNLocalize.getLocales()[0].languageCode;
   } catch (e) {}
 
   try {

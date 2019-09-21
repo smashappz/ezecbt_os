@@ -149,7 +149,7 @@ class Distortions extends Component {
               </Text>
               •{" "}
               <Text style={{ fontWeight: "bold" }}>
-                {i18n.t("diary.fair")}:{" "}
+                {i18n.t("diary.dist_fair")}:{" "}
               </Text>
               {i18n.t("diary.dist_fair2")}
               {"\n\n"}{" "}
@@ -181,9 +181,9 @@ class Distortions extends Component {
               </Text>
               •{" "}
               <Text style={{ fontWeight: "bold" }}>
-                {i18n.t("diary.label")}:{" "}
+                {i18n.t("diary.dist_label")}:{" "}
               </Text>
-              {i18n.t("diary.label2")}
+              {i18n.t("diary.dist_label2")}
               {"\n\n"}{" "}
               <Text
                 style={{
@@ -192,7 +192,7 @@ class Distortions extends Component {
                   fontWeight: "bold"
                 }}
               >
-                {i18n.t("diary.label3")}
+                {i18n.t("diary.dist_label3")}
                 {"\n\n"}
               </Text>
               •{" "}
