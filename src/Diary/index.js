@@ -122,7 +122,7 @@ class Diary extends Component {
         post: null,
         posts: state.posts.filter(p => p.key !== key)
       }));
-      trendsRef.current.getData();
+      trendsRef && trendsRef.current.getData();
     });
   };
 
@@ -381,14 +381,24 @@ class Diary extends Component {
             loadMore: true,
             refresh: true
           });
-          trendsRef.current.getData();
+          trendsRef && trendsRef.current.getData();
         }
       );
     } else {
-      updatePost(post, alternative, automatic, challenge, distStr, distList);
-      this.setState({
-        post: null
-      });
+      updatePost(
+        post,
+        alternative,
+        automatic,
+        challenge,
+        distStr,
+        distList,
+        () => {
+          this.setState({
+            post: null
+          });
+          trendsRef && trendsRef.current.getData();
+        }
+      );
     }
   };
 

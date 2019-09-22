@@ -422,7 +422,8 @@ export const updatePost = (
   automatic,
   challenge,
   distortions,
-  distList
+  distList,
+  callback
 ) => {
   const newDistortions = distortions.split("+");
   const oldDistortions = post.distortions.split("+");
@@ -476,6 +477,9 @@ export const updatePost = (
       p.challenge = challenge;
       p.distortions = distortions;
     });
+
+    updateTrends();
+    callback && callback();
   });
 };
 
