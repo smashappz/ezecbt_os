@@ -1,5 +1,5 @@
 import React from "react";
-import { Dimensions, Linking } from "react-native";
+import { Dimensions, Linking, NativeModules } from "react-native";
 import AsyncStorage from "@react-native-community/async-storage";
 import RNFS, { DocumentDirectoryPath } from "react-native-fs";
 import date from "date-and-time";
@@ -102,7 +102,7 @@ export function speak(words, cb) {
 
 export const startRecognizing = async () => {
   try {
-    await Voice.start(locale);
+    await Voice.start(NativeModules.I18nManager.localeIdentifier);
   } catch (e) {}
 };
 
